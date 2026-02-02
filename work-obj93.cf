@@ -1,0 +1,4 @@
+v 4
+file . "and_gate.vhdl" "757b2e28c4291c17cb92600632ba5d3f97cb87e7" "20251124154208.897":
+  entity and_gate at 1( 0) + 0 on 11;
+  architecture andlogic of and_gate at 11( 162) + 0 on 12;

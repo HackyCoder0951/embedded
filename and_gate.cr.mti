@@ -1,0 +1,8 @@
+C:/modeltech64_10.5/examples/embedded/and_gate.vhdl {0 {vcom -work work -2002 -vopt -stats=none C:/modeltech64_10.5/examples/embedded/and_gate.vhdl
+** Warning: (vcom-14) Failed to open "C:/modeltech64_10.5/examples/embedded/and_gate.mpf" specified by the MODELSIM environment variable.
+The system cannot find the file specified. (GetLastError() = 2)
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+** Error: C:/modeltech64_10.5/examples/embedded/and_gate.vhdl(1): near "libray": syntax error
+
+} {6.0 7.0} {}}

@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity invertor_gate_tb is 
+end invertor_gate_tb;
+
+architecture behaviour of invertor_gate_tb is
+    component invertor_gate
+        Port (
+            a : in std_logic;
+            b : out std_logic
+        );
+    end component;
+        signal a : std_logic := '0';
+        signal b : std_logic := '0';
+        begin
+            UUT : invertor_gate
+                port map( 
+                    a => a,
+                    b => b
+                );
+            stim_proc : process
+                begin
+                    a <= '0';
+						wait for 100 ns;
+                    a <= '1'; 
+						wait for 100 ns; 
+					wait;
+                end process;
+        end behaviour;

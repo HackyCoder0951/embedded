@@ -1,0 +1,31 @@
+library IEEE;
+
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY Com_test IS
+END Com_test;
+
+ARCHITECTURE Ctest OF Com_test IS
+    COMPONENT com_4 IS
+        port(   A:IN STD_LOGIC_VECTOR(3 downto 0);
+                B:IN STD_LOGIC_VECTOR(3 downto 0);
+                c:IN STD_LOGIC_VECTOR(3 downto 0);
+	          d:IN STD_LOGIC_VECTOR(3 downto 0);
+                output:OUT STD_LOGIC_VECTOR(3 downto 0)
+        );
+    END COMPONENT;
+
+    SIGNAL a : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL b : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL c : STD_LOGIC_VECTOR(3 downto 0);
+    SIGNAL d : STD_LOGIC_VECTOR(3 downto 0);
+   SIGNAL e : STD_LOGIC_VECTOR(3 downto 0);
+BEGIN
+    uut : com_4 PORT MAP(a, b , c ,d,e);
+    a <= "1111" , "0101" After 10 NS;
+    b <= "1110" , "0100" AFTER 10 NS;
+     c <= "1010" , "0011" AFTER 10 NS;
+    d <= "1001" , "0010" AFTER 10 NS;
+END Ctest;

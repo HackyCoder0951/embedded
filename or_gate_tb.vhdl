@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity or_gate_tb is 
+end or_gate_tb;
+
+architecture behaviour of or_gate_tb is
+    component or_gate
+        Port (
+            a,b : in std_logic;
+            c : out std_logic
+        );
+    end component;
+        signal a,b : std_logic := '0';
+        signal c : std_logic;
+        begin
+            UUT : or_gate
+                port map(a => a,b => b,c => c);
+            stim_proc : process
+                begin
+                    a <= '0'; b <= '0'; 
+						wait for 100 ns;
+                    a <= '0'; b <= '1'; 
+						wait for 100 ns;
+                    a <= '1'; b <= '0'; 
+						wait for 100 ns;
+                    a <= '1'; b <= '1'; 
+						wait for 100 ns; 
+					wait;
+                end process;
+        end behaviour;

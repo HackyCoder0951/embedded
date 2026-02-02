@@ -1,0 +1,44 @@
+library ieee; 
+use ieee.std_logic_1164.all; 
+
+entity nand_gate_tb is 
+end nand_gate_tb; 
+
+architecture behaviour of nand_gate_tb is 
+	-- Component Declaration 
+	component nand_gate 
+		Port ( 
+			a : in std_logic; 
+			b : in std_logic; 
+			c : out std_logic 
+			); 
+	end component; 
+	-- Signals to connect to UUT 
+		signal a : std_logic := '0'; 
+		signal b : std_logic := '0'; 
+		signal c : std_logic; 
+		begin 
+	-- Instantiate the Unit Under Test (UUT) 
+		UUT: nand_gate 
+			port map ( 
+					a => a, 
+					b => b, 
+					c => c 
+					); 
+	-- Stimulus Process 
+		stim_proc: process begin 
+	-- Test 00 
+		a <= '0'; b <= '0'; 
+			wait for 100 ns; 
+	-- Test 01 
+		a <= '0'; b <= '1'; 
+			wait for 100 ns; 
+	-- Test 10 
+		a <= '1'; b <= '0'; 
+			wait for 100 ns; 
+	-- Test 11 
+		a <= '1'; b <= '1'; 
+			wait for 100 ns; wait; 
+	-- stop simulation 
+	end process; 
+end behaviour;
