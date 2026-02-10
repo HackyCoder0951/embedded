@@ -9,9 +9,7 @@ architecture behavior of smallest_3_inp_tb is
 
     component smallest_3_inp
         Port (
-            A   : in  signed(3 downto 0);
-            B   : in  signed(3 downto 0);
-            C   : in  signed(3 downto 0);
+            A,B,C   : in  signed(3 downto 0);
             MIN : out signed(3 downto 0)
         );
     end component;
@@ -43,7 +41,7 @@ begin
     A <= "1111"; B <= "1100";C <= "1101"; wait for 10 ns;
 
     -- Test 4
-    A <= "1110";B <= "1110";C <= "0011"; wait for 10 ns;
+    A <= "1110";B <= "0101";C <= "0011"; wait for 10 ns;
 
     -- Test 5
     A <= "1000";B <= "0111"; C <= "0000"; wait for 10 ns;
