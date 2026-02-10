@@ -4,18 +4,15 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity largest_4_inp is
     Port (
-        A   : in  unsigned(3 downto 0);
-        B   : in  unsigned(3 downto 0);
-        C   : in  unsigned(3 downto 0);
-        D   : in  unsigned(3 downto 0);
-        MAX : out unsigned(3 downto 0)
+        A,B,C,D   : in  signed(3 downto 0);
+        MAX : out signed(3 downto 0)
     );
 end largest_4_inp;
 
 architecture behavioral of largest_4_inp is
 begin
     process(A, B, C, D)
-        variable temp_max : unsigned(3 downto 0);
+        variable temp_max : signed(3 downto 0);
     begin
         temp_max := A;
 
